@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\Build\Common.props" />
+  <PropertyGroup>
+    <RootNamespace>apiOnBording.Infrastructure</RootNamespace>
+    <AssemblyName>apiOnBording.Infrastructure</AssemblyName>
+    <Version>8.2.2</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EventHandler\**" />
+    <EmbeddedResource Remove="EventHandler\**" />
+    <None Remove="EventHandler\**" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Andreani.ARQ.AMQStreams" Version="8.4.3" />
+    <PackageReference Include="Andreani.ARQ.CQRS" Version="8.4.3" />
+    <PackageReference Include="Andreani.Onboarding.Event" Version="6.0.0" />
+    <PackageReference Include="AWSSDK.Core" Version="3.7.304.19" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Application\Application.csproj" />
+  </ItemGroup>
+</Project>
